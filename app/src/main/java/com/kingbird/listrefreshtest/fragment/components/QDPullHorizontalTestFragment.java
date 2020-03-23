@@ -1,4 +1,4 @@
-package com.kingbird.listrefreshtest.fragment;
+package com.kingbird.listrefreshtest.fragment.components;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kingbird.listrefreshtest.R;
 import com.kingbird.listrefreshtest.adaptor.QDRecyclerViewAdapter;
+import com.kingbird.listrefreshtest.fragment.BaseFragment;
 import com.kingbird.listrefreshtest.manager.QDDataManager;
 import com.kingbird.listrefreshtest.model.QDItemDescription;
 import com.qmuiteam.qmui.arch.annotation.LatestVisitRecord;

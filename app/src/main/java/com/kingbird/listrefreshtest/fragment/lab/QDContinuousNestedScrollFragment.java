@@ -7,13 +7,13 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 import com.kingbird.listrefreshtest.R;
+import com.kingbird.listrefreshtest.annotation.Group;
+import com.kingbird.listrefreshtest.annotation.Widget;
 import com.kingbird.listrefreshtest.fragment.BaseFragment;
 import com.kingbird.listrefreshtest.manager.QDDataManager;
 import com.qmuiteam.qmui.nestedScroll.QMUIContinuousNestedScrollLayout;
 import com.qmuiteam.qmui.widget.QMUITopBarLayout;
 import com.qmuiteam.qmui.widget.grouplist.QMUIGroupListView;
-import com.qmuiteam.qmuidemo.lib.Group;
-import com.qmuiteam.qmuidemo.lib.annotation.Widget;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -1,6 +1,5 @@
 package com.kingbird.listrefreshtest.fragment.home;
 
-import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,13 +54,9 @@ public class HomeFragment extends BaseFragment {
         @NonNull
         @Override
         public Object instantiateItem(final ViewGroup container, int position) {
-            KLog.e("position: " + position);
-            KLog.e("mPages：" + Pager.getPagerFromPositon(position));
-            KLog.e("mPages：" + mPages);
             HomeController page = mPages.get(Pager.getPagerFromPositon(position));
             ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
             container.addView(page, params);
-            KLog.e("page大小：" + page);
             return page;
         }
 
@@ -88,8 +83,6 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected View onCreateView() {
-        @SuppressLint("InflateParams")
-//        View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_home, null);
         FrameLayout layout = (FrameLayout) LayoutInflater.from(getActivity()).inflate(R.layout.fragment_home, null);
         ButterKnife.bind(this, layout);
         initTabs();
@@ -126,9 +119,16 @@ public class HomeFragment extends BaseFragment {
 
     private void initPagers() {
 
-        HomeController.HomeControlListener listener = HomeFragment.this::startFragment;
+//        HomeController.HomeControlListener listener = HomeFragment.this::startFragment;
+        HomeController.HomeControlListener listener = new HomeController.HomeControlListener() {
+            @Override
+            public void startFragment(BaseFragment fragment) {
+                KLog.e("启动对象：" + fragment);
+                HomeFragment.this.startFragment(fragment);
+            }
+        };
 
-        mPages = new HashMap<>(3);
+        mPages = new HashMap<>();
 
         HomeController homeComponentsController = new HomeComponentsController(getActivity());
         homeComponentsController.setHomeControlListener(listener);
@@ -166,10 +166,10 @@ public class HomeFragment extends BaseFragment {
         }
     }
 
-//    @Override
-//    protected boolean canDragBack() {
-//        return false;
-//    }
+    @Override
+    protected boolean canDragBack() {
+        return false;
+    }
 
     @Override
     public Object onLastFragmentFinish() {

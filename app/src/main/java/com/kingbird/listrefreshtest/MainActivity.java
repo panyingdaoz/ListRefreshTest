@@ -24,10 +24,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.kingbird.listrefreshtest.fragment.BaseFragment;
-import com.kingbird.listrefreshtest.fragment.QDNotchHelperFragment;
-import com.kingbird.listrefreshtest.fragment.QDPullHorizontalTestFragment;
-import com.kingbird.listrefreshtest.fragment.QDPullRefreshAndLoadMoreTestFragment;
-import com.kingbird.listrefreshtest.fragment.QDPullVerticalTestFragment;
+import com.kingbird.listrefreshtest.fragment.helper.QDNotchHelperFragment;
+import com.kingbird.listrefreshtest.fragment.components.QDPullHorizontalTestFragment;
+import com.kingbird.listrefreshtest.fragment.components.QDPullRefreshAndLoadMoreTestFragment;
+import com.kingbird.listrefreshtest.fragment.components.QDPullVerticalTestFragment;
 import com.kingbird.listrefreshtest.fragment.QDWebExplorerFragment;
 import com.kingbird.listrefreshtest.fragment.home.HomeFragment;
 import com.kingbird.listrefreshtest.fragment.lab.QDContinuousNestedScroll1Fragment;
@@ -58,7 +58,6 @@ import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 import static com.kingbird.listrefreshtest.fragment.QDWebExplorerFragment.EXTRA_TITLE;
 import static com.kingbird.listrefreshtest.fragment.QDWebExplorerFragment.EXTRA_URL;
@@ -84,7 +83,7 @@ import static com.kingbird.listrefreshtest.fragment.QDWebExplorerFragment.EXTRA_
 //                QDRVSwipeMutiActionFragment.class,
 //                QDPopupFragment.class
         })
-//@DefaultFirstFragment(HomeFragment.class)
+@DefaultFirstFragment(HomeFragment.class)
 @LatestVisitRecord
 public class MainActivity extends QMUIFragmentActivity {
 
@@ -108,8 +107,8 @@ public class MainActivity extends QMUIFragmentActivity {
 
     @Override
     protected int getContextViewId() {
-        KLog.e("id：" + R.id.qmuidemo);
-        return R.id.qmuidemo;
+        KLog.e("id：" + R.id.listrefreshtest);
+        return R.id.listrefreshtest;
     }
 
 //    @Override
@@ -256,6 +255,11 @@ public class MainActivity extends QMUIFragmentActivity {
                 .edgeProtection(QMUIDisplayHelper.dp2px(this, 10))
                 .offsetYIfTop(QMUIDisplayHelper.dp2px(this, 5))
                 .show(v);
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 
     class CustomRootView extends RootView {

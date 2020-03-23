@@ -76,7 +76,7 @@ public class MyApplication extends Application {
         QDSkinManager.install(this);
         QMUISkinMaker.init(context,
                 new String[]{"com.kingbird.listrefreshtest"},
-                new String[]{"app_skin_"}, R.attr.class);
+                new String[]{"app_skin_kingbird"}, R.attr.class);
     }
 
     @Override

@@ -20,10 +20,10 @@ import androidx.fragment.app.Fragment;
 
 import com.kingbird.listrefreshtest.base.BaseFragmentActivity;
 import com.kingbird.listrefreshtest.fragment.BaseFragment;
-import com.kingbird.listrefreshtest.fragment.QDNotchHelperFragment;
-import com.kingbird.listrefreshtest.fragment.QDPullHorizontalTestFragment;
-import com.kingbird.listrefreshtest.fragment.QDPullRefreshAndLoadMoreTestFragment;
-import com.kingbird.listrefreshtest.fragment.QDPullVerticalTestFragment;
+import com.kingbird.listrefreshtest.fragment.helper.QDNotchHelperFragment;
+import com.kingbird.listrefreshtest.fragment.components.QDPullHorizontalTestFragment;
+import com.kingbird.listrefreshtest.fragment.components.QDPullRefreshAndLoadMoreTestFragment;
+import com.kingbird.listrefreshtest.fragment.components.QDPullVerticalTestFragment;
 import com.kingbird.listrefreshtest.fragment.QDWebExplorerFragment;
 import com.kingbird.listrefreshtest.fragment.home.HomeFragment;
 import com.kingbird.listrefreshtest.fragment.lab.QDContinuousNestedScroll1Fragment;
@@ -177,7 +177,7 @@ public class QDMainActivity extends BaseFragmentActivity {
 
     @Override
     protected int getContextViewId() {
-        return R.id.qmuidemo;
+        return R.id.listrefreshtest;
     }
 
 

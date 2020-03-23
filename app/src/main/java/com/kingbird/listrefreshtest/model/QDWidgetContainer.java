@@ -1,11 +1,11 @@
 package com.kingbird.listrefreshtest.model;
 
 import com.kingbird.listrefreshtest.fragment.BaseFragment;
-import com.kingbird.listrefreshtest.fragment.QDNotchHelperFragment;
-import com.kingbird.listrefreshtest.fragment.QDPullFragment;
-import com.kingbird.listrefreshtest.fragment.QDPullHorizontalTestFragment;
-import com.kingbird.listrefreshtest.fragment.QDPullRefreshAndLoadMoreTestFragment;
-import com.kingbird.listrefreshtest.fragment.QDPullVerticalTestFragment;
+import com.kingbird.listrefreshtest.fragment.components.QDPullFragment;
+import com.kingbird.listrefreshtest.fragment.helper.QDNotchHelperFragment;
+import com.kingbird.listrefreshtest.fragment.components.QDPullHorizontalTestFragment;
+import com.kingbird.listrefreshtest.fragment.components.QDPullRefreshAndLoadMoreTestFragment;
+import com.kingbird.listrefreshtest.fragment.components.QDPullVerticalTestFragment;
 import com.kingbird.listrefreshtest.fragment.lab.QDAnimationListViewFragment;
 import com.kingbird.listrefreshtest.fragment.lab.QDContinuousNestedScroll1Fragment;
 import com.kingbird.listrefreshtest.fragment.lab.QDContinuousNestedScroll2Fragment;
@@ -15,8 +15,6 @@ import com.kingbird.listrefreshtest.fragment.lab.QDContinuousNestedScroll5Fragme
 import com.kingbird.listrefreshtest.fragment.lab.QDContinuousNestedScroll6Fragment;
 import com.kingbird.listrefreshtest.fragment.lab.QDContinuousNestedScroll7Fragment;
 import com.kingbird.listrefreshtest.fragment.lab.QDContinuousNestedScroll8Fragment;
-import com.kingbird.listrefreshtest.fragment.lab.QDContinuousNestedScrollFragment;
-import com.kingbird.listrefreshtest.fragment.section.QDSectionLayoutFragment;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,7 +33,7 @@ public class QDWidgetContainer {
 
     private QDWidgetContainer() {
         mWidgets = new HashMap<>();
-//        mWidgets.put(QDPullFragment.class, new QDItemDescription(QDPullFragment.class, "QMUIPullLayout", 2131492894, ""));
+        mWidgets.put(QDPullFragment.class, new QDItemDescription(QDPullFragment.class, "QMUIPullLayout", 2131492894, ""));
         mWidgets.put(QDPullHorizontalTestFragment.class, new QDItemDescription(QDPullHorizontalTestFragment.class, "PullLayout: Horizontal Test", 0, ""));
         mWidgets.put(QDPullRefreshAndLoadMoreTestFragment.class, new QDItemDescription(QDPullRefreshAndLoadMoreTestFragment.class, "PullLayout: Refresh And LoadMore", 0, ""));
         mWidgets.put(QDPullVerticalTestFragment.class, new QDItemDescription(QDPullVerticalTestFragment.class, "PullLayout: Vertical Test", 0, ""));

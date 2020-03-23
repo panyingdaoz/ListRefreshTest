@@ -1,8 +1,8 @@
 package com.kingbird.listrefreshtest.manager;
 
 import com.kingbird.listrefreshtest.fragment.BaseFragment;
-import com.kingbird.listrefreshtest.fragment.QDNotchHelperFragment;
-import com.kingbird.listrefreshtest.fragment.QDPullFragment;
+import com.kingbird.listrefreshtest.fragment.helper.QDNotchHelperFragment;
+import com.kingbird.listrefreshtest.fragment.components.QDPullFragment;
 import com.kingbird.listrefreshtest.fragment.lab.QDAnimationListViewFragment;
 import com.kingbird.listrefreshtest.fragment.lab.QDContinuousNestedScrollFragment;
 import com.kingbird.listrefreshtest.fragment.section.QDSectionLayoutFragment;
@@ -68,8 +68,8 @@ public class QDDataManager {
 //        mComponentsNames.add(QDPriorityLinearLayoutFragment.class);
         mComponentsNames.add(QDSectionLayoutFragment.class);
         mComponentsNames.add(QDContinuousNestedScrollFragment.class);
+        mComponentsNames.add(QDPullFragment.class);
 //        mComponentsNames.add(QDSliderFragment.class);
-//        mComponentsNames.add(QDPullFragment.class);
 //        mComponentsNames.add(QDRecyclerViewDraggableScrollBarFragment.class);
 //        mComponentsNames.add(QDRVSwipeActionFragment.class);
     }

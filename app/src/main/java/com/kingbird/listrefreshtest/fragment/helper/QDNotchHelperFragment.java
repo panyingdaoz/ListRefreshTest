@@ -1,4 +1,4 @@
-package com.kingbird.listrefreshtest.fragment;
+package com.kingbird.listrefreshtest.fragment.helper;
 
 import android.app.Activity;
 import android.os.Build;
@@ -15,6 +15,9 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 
 import com.kingbird.listrefreshtest.R;
+import com.kingbird.listrefreshtest.annotation.Group;
+import com.kingbird.listrefreshtest.annotation.Widget;
+import com.kingbird.listrefreshtest.fragment.BaseFragment;
 import com.kingbird.listrefreshtest.manager.QDDataManager;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.util.QMUIViewHelper;
@@ -22,14 +25,16 @@ import com.qmuiteam.qmui.widget.QMUITopBarLayout;
 import com.qmuiteam.qmui.widget.tab.QMUITab;
 import com.qmuiteam.qmui.widget.tab.QMUITabBuilder;
 import com.qmuiteam.qmui.widget.tab.QMUITabSegment;
-import com.qmuiteam.qmuidemo.lib.Group;
-import com.qmuiteam.qmuidemo.lib.annotation.Widget;
+
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-@Widget(group = Group.Helper, name = "QMUINotchHelper", iconRes = R.mipmap.icon_grid_status_bar_helper)
+@Widget(group = Group.Helper, name = "QMUINotchHelper"
+//        , iconRes = R.mipmap.icon_grid_status_bar_helper
+)
 public class QDNotchHelperFragment extends BaseFragment {
     private static final String TAG = "QDNotchHelperFragment";
     @BindView(R.id.not_safe_bg)
@@ -96,7 +101,7 @@ public class QDNotchHelperFragment extends BaseFragment {
         QMUITabBuilder builder = mTabSegment.tabBuilder();
         builder.setColorAttr(R.attr.qmui_config_color_gray_6, R.attr.qmui_config_color_blue)
                 .setSelectedIconScale(2f)
-                .setTextSize(QMUIDisplayHelper.sp2px(getContext(), 14), QMUIDisplayHelper.sp2px(getContext(), 16))
+                .setTextSize(QMUIDisplayHelper.sp2px(Objects.requireNonNull(getContext()), 14), QMUIDisplayHelper.sp2px(getContext(), 16))
                 .setDynamicChangeIconColor(false);
         QMUITab component = builder
                 .setNormalDrawable(ContextCompat.getDrawable(getContext(), R.mipmap.icon_tabbar_component))

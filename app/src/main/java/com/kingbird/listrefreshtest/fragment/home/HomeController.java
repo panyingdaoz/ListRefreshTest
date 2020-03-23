@@ -15,7 +15,7 @@ import com.kingbird.listrefreshtest.base.BaseRecyclerAdapter;
 import com.kingbird.listrefreshtest.base.RecyclerViewHolder;
 import com.kingbird.listrefreshtest.fragment.BaseFragment;
 import com.kingbird.listrefreshtest.fragment.QDAboutFragment;
-import com.kingbird.listrefreshtest.fragment.QDNotchHelperFragment;
+import com.kingbird.listrefreshtest.fragment.helper.QDNotchHelperFragment;
 import com.kingbird.listrefreshtest.model.QDItemDescription;
 import com.qmuiteam.qmui.util.QMUIViewHelper;
 import com.qmuiteam.qmui.widget.QMUITopBarLayout;
@@ -29,6 +29,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.kingbird.listrefreshtest.utils.Const.ANIMATION_LISTVIEW;
+import static com.kingbird.listrefreshtest.utils.Const.NOTCH_HELPER;
+import static com.kingbird.listrefreshtest.utils.Const.PULL_FRAGMENT;
+import static com.kingbird.listrefreshtest.utils.Const.SECTION_LAYOUT;
 
 /**
  * @author cginechen
@@ -135,8 +140,6 @@ public abstract class HomeController extends QMUIWindowInsetLayout {
 
         public ItemAdapter(Context ctx, List<QDItemDescription> data) {
             super(ctx, data);
-            KLog.e("接收数据对象：" + ctx);
-            KLog.e("接收数据：" + data);
         }
 
         @Override
@@ -146,22 +149,34 @@ public abstract class HomeController extends QMUIWindowInsetLayout {
 
         @Override
         public void bindData(RecyclerViewHolder holder, int position, QDItemDescription item) {
-            KLog.e("item：" + item);
-            KLog.e("position：" + position);
-            String name;
-            if (item == null) {
-                name = "item为空";
-            } else {
-                name = item.getName();
-            }
-            KLog.e("holder: " + holder.toString());
-//            holder.getTextView(R.id.item_name).setText(name);
+//            KLog.e("item：" + item);  getDemoClass：class com.kingbird.listrefreshtest.fragment.helper.QDNotchHelperFragment
             if (item != null) {
                 holder.getTextView(R.id.item_name).setText(item.getName());
                 if (item.getIconRes() != 0) {
-                    KLog.e("item资源ID：" + R.id.item_icon);
-                    KLog.e("item资源ID：" + item.getIconRes());
-                    holder.getImageView(R.id.item_icon).setImageResource(item.getIconRes());
+                    int iconRes;
+                    String str = item.getDemoClass().toString();
+                    KLog.e("getDemoClass：" + str);
+                    String strClass = str.substring(str.lastIndexOf(".") + 1);
+                    KLog.e("截取后的数据：" + strClass);
+//                holder.getImageView(R.id.item_icon).setImageResource(item.getIconRes());
+                    switch (strClass) {
+                        case NOTCH_HELPER:
+                            iconRes = R.mipmap.icon_grid_status_bar_helper;
+                            break;
+                        case ANIMATION_LISTVIEW:
+                            iconRes = R.mipmap.icon_grid_anim_list_view;
+                            break;
+                        case SECTION_LAYOUT:
+                            iconRes = R.mipmap.icon_grid_sticky_section;
+                            break;
+                        case PULL_FRAGMENT:
+                            iconRes = R.mipmap.icon_grid_pull_layout;
+                            break;
+                        default:
+                            iconRes = R.mipmap.icon_grid_status_bar_helper;
+                            break;
+                    }
+                    holder.getImageView(R.id.item_icon).setImageResource(iconRes);
                 }
             }
         }

@@ -1,10 +1,11 @@
-package com.kingbird.listrefreshtest.fragment;
+package com.kingbird.listrefreshtest.fragment.components;
 
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 
 import com.kingbird.listrefreshtest.R;
+import com.kingbird.listrefreshtest.fragment.BaseFragment;
 import com.kingbird.listrefreshtest.manager.QDDataManager;
 import com.kingbird.listrefreshtest.model.QDItemDescription;
 import com.qmuiteam.qmui.widget.QMUITopBarLayout;
@@ -16,7 +17,9 @@ import com.socks.library.KLog;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-@Widget(widgetClass = QMUIPullLayout.class, iconRes = R.mipmap.icon_grid_pull_layout)
+@Widget(widgetClass = QMUIPullLayout.class
+//        , iconRes = R.mipmap.icon_grid_pull_layout
+)
 public class QDPullFragment extends BaseFragment {
     @BindView(R.id.topbar)
     QMUITopBarLayout mTopBar;

@@ -7,13 +7,13 @@ import android.widget.Toast;
 
 import com.kingbird.listrefreshtest.R;
 import com.kingbird.listrefreshtest.adaptor.QDSimpleAdapter;
+import com.kingbird.listrefreshtest.annotation.Group;
+import com.kingbird.listrefreshtest.annotation.Widget;
 import com.kingbird.listrefreshtest.fragment.BaseFragment;
 import com.kingbird.listrefreshtest.manager.QDDataManager;
 import com.qmuiteam.qmui.util.QMUIViewHelper;
 import com.qmuiteam.qmui.widget.QMUIAnimationListView;
 import com.qmuiteam.qmui.widget.QMUITopBarLayout;
-import com.qmuiteam.qmuidemo.lib.Group;
-import com.qmuiteam.qmuidemo.lib.annotation.Widget;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,8 +25,9 @@ import butterknife.ButterKnife;
  * @author cginechen
  * @date 2017-03-30
  */
-
-@Widget(group = Group.Lab, widgetClass = QMUIAnimationListView.class, iconRes = R.mipmap.icon_grid_anim_list_view)
+@Widget(group = Group.Lab, widgetClass = QMUIAnimationListView.class
+//        , iconRes = R.mipmap.icon_grid_anim_list_view
+)
 public class QDAnimationListViewFragment extends BaseFragment {
 
     @BindView(R.id.topbar)

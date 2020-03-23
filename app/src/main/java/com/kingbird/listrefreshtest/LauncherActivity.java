@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -19,7 +20,7 @@ import com.socks.library.KLog;
  * @date 2016-12-08
  */
 
-public class LauncherActivity extends Activity {
+public class LauncherActivity extends AppCompatActivity {
 
     private static final int PERMISSIONS_REQUEST_CODE = 10;
     private static final String[] PERMISSIONS_REQUIRED = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
