@@ -12,10 +12,7 @@ import com.kingbird.listrefreshtest.model.SectionHeader;
 import com.kingbird.listrefreshtest.model.SectionItem;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.widget.section.QMUIStickySectionAdapter;
-import com.qmuiteam.qmuidemo.lib.Group;
-import com.qmuiteam.qmuidemo.lib.annotation.Widget;
 
-@Widget(group = Group.Other, name = "Sticky Section for Grid")
 public class QDGridSectionLayoutFragment extends QDBaseSectionLayoutFragment {
     @Override
     protected QMUIStickySectionAdapter<SectionHeader, SectionItem, QMUIStickySectionAdapter.ViewHolder> createAdapter() {

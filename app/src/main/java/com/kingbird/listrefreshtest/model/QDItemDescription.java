@@ -1,7 +1,6 @@
 package com.kingbird.listrefreshtest.model;
 
-import com.kingbird.listrefreshtest.fragment.BaseFragment;
-import com.socks.library.KLog;
+import com.kingbird.listrefreshtest.base.BaseFragment;
 
 /**
  * @author cginechen
@@ -21,9 +20,9 @@ public class QDItemDescription {
 
     public QDItemDescription(Class<? extends BaseFragment> kitDemoClass, String kitName, int iconRes, String docUrl) {
         mKitDemoClass = kitDemoClass;
-        KLog.e("kitName：" + kitName);
+//        KLog.e("kitName：" + kitName);
         mKitName = kitName;
-        KLog.e("传入iconRes：" + iconRes);
+//        KLog.e("传入iconRes：" + iconRes);
         mIconRes = iconRes;
         mDocUrl = docUrl;
     }

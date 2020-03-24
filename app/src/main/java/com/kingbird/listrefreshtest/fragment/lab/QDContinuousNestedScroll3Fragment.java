@@ -15,15 +15,12 @@ import com.qmuiteam.qmui.nestedScroll.QMUIContinuousNestedBottomAreaBehavior;
 import com.qmuiteam.qmui.nestedScroll.QMUIContinuousNestedBottomRecyclerView;
 import com.qmuiteam.qmui.nestedScroll.QMUIContinuousNestedTopAreaBehavior;
 import com.qmuiteam.qmui.nestedScroll.QMUIContinuousNestedTopRecyclerView;
-import com.qmuiteam.qmuidemo.lib.Group;
-import com.qmuiteam.qmuidemo.lib.annotation.Widget;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-@Widget(group = Group.Other, name = "recyclerview + recyclerview")
 public class QDContinuousNestedScroll3Fragment extends QDContinuousNestedScrollBaseFragment {
 
     private QMUIContinuousNestedTopRecyclerView mTopRecyclerView;

@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kingbird.listrefreshtest.R;
-import com.kingbird.listrefreshtest.fragment.BaseFragment;
+import com.kingbird.listrefreshtest.base.BaseFragment;
 import com.kingbird.listrefreshtest.manager.QDDataManager;
 import com.kingbird.listrefreshtest.model.SectionHeader;
 import com.kingbird.listrefreshtest.model.SectionItem;

@@ -9,11 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.kingbird.listrefreshtest.GridDividerItemDecoration;
-import com.kingbird.listrefreshtest.MainActivity;
+import com.kingbird.listrefreshtest.QDMainActivity;
 import com.kingbird.listrefreshtest.R;
 import com.kingbird.listrefreshtest.base.BaseRecyclerAdapter;
 import com.kingbird.listrefreshtest.base.RecyclerViewHolder;
-import com.kingbird.listrefreshtest.fragment.BaseFragment;
+import com.kingbird.listrefreshtest.base.BaseFragment;
 import com.kingbird.listrefreshtest.fragment.QDAboutFragment;
 import com.kingbird.listrefreshtest.fragment.helper.QDNotchHelperFragment;
 import com.kingbird.listrefreshtest.model.QDItemDescription;
@@ -72,8 +72,11 @@ public abstract class HomeController extends QMUIWindowInsetLayout {
     protected abstract String getTitle();
 
     private void initTopBar() {
+        KLog.e("topBar标题：" + getTitle());
         mTopBar.setTitle(getTitle());
-
+//        mTopBar.setTitle(getTitle()).setTextColor(R.color.colorWhite);
+//        mTopBar.setTitle("列表刷新").setTextColor(ContextCompat.getColor(this, R.color.qmui_config_color_white));
+//        mTopBar.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorPrimaryDark));
         mTopBar.addRightImageButton(R.mipmap.icon_topbar_about, R.id.topbar_right_about_button).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,7 +97,8 @@ public abstract class HomeController extends QMUIWindowInsetLayout {
                     BaseFragment fragment = item.getDemoClass().newInstance();
                     if (fragment instanceof QDNotchHelperFragment) {
                         Context context = getContext();
-                        Intent intent = MainActivity.of(context, QDNotchHelperFragment.class);
+//                        Intent intent = MainActivity.of(context, QDNotchHelperFragment.class);
+                        Intent intent = QDMainActivity.of(context, QDNotchHelperFragment.class);
                         context.startActivity(intent);
                         if (context instanceof Activity) {
                             ((Activity) context).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
@@ -149,13 +153,11 @@ public abstract class HomeController extends QMUIWindowInsetLayout {
 
         @Override
         public void bindData(RecyclerViewHolder holder, int position, QDItemDescription item) {
-//            KLog.e("item：" + item);  getDemoClass：class com.kingbird.listrefreshtest.fragment.helper.QDNotchHelperFragment
             if (item != null) {
                 holder.getTextView(R.id.item_name).setText(item.getName());
                 if (item.getIconRes() != 0) {
                     int iconRes;
                     String str = item.getDemoClass().toString();
-                    KLog.e("getDemoClass：" + str);
                     String strClass = str.substring(str.lastIndexOf(".") + 1);
                     KLog.e("截取后的数据：" + strClass);
 //                holder.getImageView(R.id.item_icon).setImageResource(item.getIconRes());
@@ -173,7 +175,8 @@ public abstract class HomeController extends QMUIWindowInsetLayout {
                             iconRes = R.mipmap.icon_grid_pull_layout;
                             break;
                         default:
-                            iconRes = R.mipmap.icon_grid_status_bar_helper;
+//                            iconRes = R.mipmap.icon_grid_status_bar_helper;
+                            iconRes = item.getIconRes();
                             break;
                     }
                     holder.getImageView(R.id.item_icon).setImageResource(iconRes);

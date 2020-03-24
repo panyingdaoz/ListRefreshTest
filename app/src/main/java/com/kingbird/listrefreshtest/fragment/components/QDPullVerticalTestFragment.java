@@ -11,14 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.kingbird.listrefreshtest.R;
 import com.kingbird.listrefreshtest.base.BaseRecyclerAdapter;
 import com.kingbird.listrefreshtest.base.RecyclerViewHolder;
-import com.kingbird.listrefreshtest.fragment.BaseFragment;
+import com.kingbird.listrefreshtest.base.BaseFragment;
 import com.kingbird.listrefreshtest.manager.QDDataManager;
 import com.kingbird.listrefreshtest.model.QDItemDescription;
 import com.qmuiteam.qmui.arch.annotation.LatestVisitRecord;
 import com.qmuiteam.qmui.widget.QMUITopBarLayout;
 import com.qmuiteam.qmui.widget.pullLayout.QMUIPullLayout;
-import com.qmuiteam.qmuidemo.lib.Group;
-import com.qmuiteam.qmuidemo.lib.annotation.Widget;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,7 +27,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 @LatestVisitRecord
-@Widget(group = Group.Other, name = "PullLayout: Vertical Test")
 public class QDPullVerticalTestFragment extends BaseFragment {
     @BindView(R.id.topbar)
     QMUITopBarLayout mTopBar;

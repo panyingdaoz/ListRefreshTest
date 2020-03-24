@@ -9,7 +9,7 @@ import android.view.View;
 
 import androidx.core.content.ContextCompat;
 
-import com.kingbird.listrefreshtest.MainActivity;
+import com.kingbird.listrefreshtest.QDMainActivity;
 import com.kingbird.listrefreshtest.R;
 import com.kingbird.listrefreshtest.fragment.lab.QDContinuousNestedScrollFragment;
 import com.kingbird.listrefreshtest.fragment.section.QDSectionLayoutFragment;
@@ -222,7 +222,7 @@ public class UpgradeTipTask implements UpgradeTask {
                 @Override
                 public void onSpanClick(View widget) {
                     KLog.e("启用QDMainActivity");
-                    Intent intent = MainActivity.createWebExplorerIntent(activity, docUrl, widgetName);
+                    Intent intent = QDMainActivity.createWebExplorerIntent(activity, docUrl, widgetName);
                     activity.startActivity(intent);
                 }
             }, start, end, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
@@ -249,7 +249,7 @@ public class UpgradeTipTask implements UpgradeTask {
                 @Override
                 public void onSpanClick(View widget) {
                     KLog.e("启用QDMainActivity");
-                    Intent intent = MainActivity.createWebExplorerIntent(activity, issueBaseUrl + issue, null);
+                    Intent intent = QDMainActivity.createWebExplorerIntent(activity, issueBaseUrl + issue, null);
                     activity.startActivity(intent);
                 }
             }, start, end, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);

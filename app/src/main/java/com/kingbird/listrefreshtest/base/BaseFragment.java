@@ -1,4 +1,4 @@
-package com.kingbird.listrefreshtest.fragment;
+package com.kingbird.listrefreshtest.base;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,7 +8,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.kingbird.listrefreshtest.MyApplication;
+import com.kingbird.listrefreshtest.QDApplication;
 import com.kingbird.listrefreshtest.QDMainActivity;
 import com.kingbird.listrefreshtest.fragment.home.HomeFragment;
 import com.kingbird.listrefreshtest.manager.QDDataManager;
@@ -38,8 +38,8 @@ public abstract class BaseFragment extends QMUIFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        if (MyApplication.openSkinMake) {
-            openSkinMaker();
+        if (QDApplication.openSkinMake) {
+//            openSkinMaker();
         }
     }
 
@@ -57,7 +57,7 @@ public abstract class BaseFragment extends QMUIFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        closeSkinMaker();
+//        closeSkinMaker();
     }
 
     @Override

@@ -5,21 +5,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.kingbird.listrefreshtest.R;
-import com.kingbird.listrefreshtest.fragment.BaseFragment;
+import com.kingbird.listrefreshtest.base.BaseFragment;
 import com.kingbird.listrefreshtest.manager.QDDataManager;
 import com.kingbird.listrefreshtest.model.QDItemDescription;
 import com.qmuiteam.qmui.widget.QMUITopBarLayout;
 import com.qmuiteam.qmui.widget.grouplist.QMUIGroupListView;
-import com.qmuiteam.qmui.widget.pullLayout.QMUIPullLayout;
-import com.qmuiteam.qmuidemo.lib.annotation.Widget;
 import com.socks.library.KLog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-@Widget(widgetClass = QMUIPullLayout.class
-//        , iconRes = R.mipmap.icon_grid_pull_layout
-)
 public class QDPullFragment extends BaseFragment {
     @BindView(R.id.topbar)
     QMUITopBarLayout mTopBar;

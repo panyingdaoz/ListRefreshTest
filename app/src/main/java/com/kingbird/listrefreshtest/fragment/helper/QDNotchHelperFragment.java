@@ -17,7 +17,7 @@ import androidx.core.view.ViewCompat;
 import com.kingbird.listrefreshtest.R;
 import com.kingbird.listrefreshtest.annotation.Group;
 import com.kingbird.listrefreshtest.annotation.Widget;
-import com.kingbird.listrefreshtest.fragment.BaseFragment;
+import com.kingbird.listrefreshtest.base.BaseFragment;
 import com.kingbird.listrefreshtest.manager.QDDataManager;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.util.QMUIViewHelper;
@@ -32,9 +32,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-@Widget(group = Group.Helper, name = "QMUINotchHelper"
-//        , iconRes = R.mipmap.icon_grid_status_bar_helper
-)
 public class QDNotchHelperFragment extends BaseFragment {
     private static final String TAG = "QDNotchHelperFragment";
     @BindView(R.id.not_safe_bg)

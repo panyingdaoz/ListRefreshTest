@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.kingbird.listrefreshtest.R;
-import com.kingbird.listrefreshtest.fragment.BaseFragment;
+import com.kingbird.listrefreshtest.base.BaseFragment;
 import com.kingbird.listrefreshtest.manager.QDDataManager;
 import com.qmuiteam.qmui.nestedScroll.QMUIContinuousNestedScrollLayout;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;

@@ -19,15 +19,12 @@ import com.qmuiteam.qmui.nestedScroll.QMUIContinuousNestedBottomRecyclerView;
 import com.qmuiteam.qmui.nestedScroll.QMUIContinuousNestedTopAreaBehavior;
 import com.qmuiteam.qmui.nestedScroll.QMUIContinuousNestedTopLinearLayout;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
-import com.qmuiteam.qmuidemo.lib.Group;
-import com.qmuiteam.qmuidemo.lib.annotation.Widget;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-@Widget(group = Group.Other, name = "linearLayout + recyclerview")
 public class QDContinuousNestedScroll6Fragment extends QDContinuousNestedScrollBaseFragment {
 
     private QMUIContinuousNestedTopLinearLayout mTopLinearLayout;

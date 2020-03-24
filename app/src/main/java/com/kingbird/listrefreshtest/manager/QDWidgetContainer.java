@@ -1,6 +1,6 @@
-package com.kingbird.listrefreshtest.model;
+package com.kingbird.listrefreshtest.manager;
 
-import com.kingbird.listrefreshtest.fragment.BaseFragment;
+import com.kingbird.listrefreshtest.base.BaseFragment;
 import com.kingbird.listrefreshtest.fragment.components.QDPullFragment;
 import com.kingbird.listrefreshtest.fragment.helper.QDNotchHelperFragment;
 import com.kingbird.listrefreshtest.fragment.components.QDPullHorizontalTestFragment;
@@ -15,6 +15,9 @@ import com.kingbird.listrefreshtest.fragment.lab.QDContinuousNestedScroll5Fragme
 import com.kingbird.listrefreshtest.fragment.lab.QDContinuousNestedScroll6Fragment;
 import com.kingbird.listrefreshtest.fragment.lab.QDContinuousNestedScroll7Fragment;
 import com.kingbird.listrefreshtest.fragment.lab.QDContinuousNestedScroll8Fragment;
+import com.kingbird.listrefreshtest.fragment.lab.QDContinuousNestedScrollFragment;
+import com.kingbird.listrefreshtest.fragment.section.QDSectionLayoutFragment;
+import com.kingbird.listrefreshtest.model.QDItemDescription;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +28,7 @@ import java.util.Map;
  * @Author: Pan
  * @CreateDate: 2020/3/20 09:08:08
  */
-public class QDWidgetContainer {
+class QDWidgetContainer {
 
     private static QDWidgetContainer sInstance = new QDWidgetContainer();
 
@@ -69,7 +72,7 @@ public class QDWidgetContainer {
 //        mWidgets.put(QDGridSectionLayoutFragment.class, new QDItemDescription(QDGridSectionLayoutFragment.class, "Sticky Section for Grid", 0, ""));
 //        mWidgets.put(QDListSectionLayoutFragment.class, new QDItemDescription(QDListSectionLayoutFragment.class, "Sticky Section for List", 0, ""));
 //        mWidgets.put(QDListWithDecorationSectionLayoutFragment.class, new QDItemDescription(QDListWithDecorationSectionLayoutFragment.class, "Sticky Section for List(With Decoration)", 0, ""));
-//        mWidgets.put(QDSectionLayoutFragment.class, new QDItemDescription(QDSectionLayoutFragment.class, "QMUIStickySectionLayout", 2131492904, "https://github.com/Tencent/QMUI_Android/wiki/QMUIStickySectionLayout"));
+        mWidgets.put(QDSectionLayoutFragment.class, new QDItemDescription(QDSectionLayoutFragment.class, "QMUIStickySectionLayout", 2131492904, "https://github.com/Tencent/QMUI_Android/wiki/QMUIStickySectionLayout"));
 //        mWidgets.put(QDRVSwipeActionFragment.class, new QDItemDescription(QDRVSwipeActionFragment.class, "QMUIRVItemSwipeAction", 2131492898, ""));
 //        mWidgets.put(QDRVSwipeDeleteWithNoActionFragment.class, new QDItemDescription(QDRVSwipeDeleteWithNoActionFragment.class, "Swipe Left: Delete With No Action", 0, ""));
 //        mWidgets.put(QDRVSwipeMutiActionFragment.class, new QDItemDescription(QDRVSwipeMutiActionFragment.class, "Swipe Left: Muti Actions", 0, ""));
@@ -90,7 +93,7 @@ public class QDWidgetContainer {
         mWidgets.put(QDContinuousNestedScroll6Fragment.class, new QDItemDescription(QDContinuousNestedScroll6Fragment.class, "linearLayout + recyclerview", 0, ""));
         mWidgets.put(QDContinuousNestedScroll7Fragment.class, new QDItemDescription(QDContinuousNestedScroll7Fragment.class, "(header + webview + bottom) + (part sticky header + viewpager)", 0, ""));
         mWidgets.put(QDContinuousNestedScroll8Fragment.class, new QDItemDescription(QDContinuousNestedScroll8Fragment.class, "(header + recyclerView + bottom) + (part sticky header + viewpager)", 0, ""));
-//        mWidgets.put(QDContinuousNestedScrollFragment.class, new QDItemDescription(QDContinuousNestedScrollFragment.class, "QMUIContinuousNestedScrollLayout", 2131492879, "https://github.com/Tencent/QMUI_Android/wiki/QMUIContinuousNestedScrollLayout"));
+        mWidgets.put(QDContinuousNestedScrollFragment.class, new QDItemDescription(QDContinuousNestedScrollFragment.class, "QMUIContinuousNestedScrollLayout", 2131492879, "https://github.com/Tencent/QMUI_Android/wiki/QMUIContinuousNestedScrollLayout"));
 //        mWidgets.put(QDSnapHelperFragment.class, new QDItemDescription(QDSnapHelperFragment.class, "用SnapHelper实现RecyclerView按页滚动", 2131492891, ""));
 //        mWidgets.put(QDSwipeDeleteListViewFragment.class, new QDItemDescription(QDSwipeDeleteListViewFragment.class, "ListView滑动删除", 0, ""));
 //        mWidgets.put(QDWebViewBridgeFragment.class, new QDItemDescription(QDWebViewBridgeFragment.class, "Webview Bridge", 0, ""));

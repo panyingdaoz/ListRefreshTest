@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
-        android:name=".MyApplication"
+        android:name=".QDApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -32,13 +32,13 @@
             android:name="notch.config"
             android:value="portrait|landscape" />
 
-        <activity
-            android:name=".MainActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|screenLayout|uiMode"
-            android:label="@string/app_name"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+<!--        <activity-->
+<!--            android:name=".MainActivity"-->
+<!--            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|screenLayout|uiMode"-->
+<!--            android:label="@string/app_name"-->
+<!--            android:windowSoftInputMode="stateAlwaysHidden|adjustResize">-->
 
-        </activity>
+<!--        </activity>-->
         <activity
             android:name=".QDMainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|screenLayout|uiMode"

@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 import com.kingbird.listrefreshtest.R;
 import com.kingbird.listrefreshtest.annotation.Group;
 import com.kingbird.listrefreshtest.annotation.Widget;
-import com.kingbird.listrefreshtest.fragment.BaseFragment;
+import com.kingbird.listrefreshtest.base.BaseFragment;
 import com.kingbird.listrefreshtest.manager.QDDataManager;
 import com.qmuiteam.qmui.nestedScroll.QMUIContinuousNestedScrollLayout;
 import com.qmuiteam.qmui.widget.QMUITopBarLayout;
@@ -18,10 +18,6 @@ import com.qmuiteam.qmui.widget.grouplist.QMUIGroupListView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-@Widget(group = Group.Lab,
-        widgetClass = QMUIContinuousNestedScrollLayout.class,
-        iconRes = R.mipmap.icon_grid_continuous_nest_scroll,
-        docUrl ="https://github.com/Tencent/QMUI_Android/wiki/QMUIContinuousNestedScrollLayout")
 public class QDContinuousNestedScrollFragment extends BaseFragment {
 
     @BindView(R.id.topbar)

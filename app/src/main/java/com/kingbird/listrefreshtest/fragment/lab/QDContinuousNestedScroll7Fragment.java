@@ -14,10 +14,7 @@ import com.qmuiteam.qmui.nestedScroll.QMUIContinuousNestedTopAreaBehavior;
 import com.qmuiteam.qmui.nestedScroll.QMUIContinuousNestedTopDelegateLayout;
 import com.qmuiteam.qmui.nestedScroll.QMUIContinuousNestedTopWebView;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
-import com.qmuiteam.qmuidemo.lib.Group;
-import com.qmuiteam.qmuidemo.lib.annotation.Widget;
 
-@Widget(group = Group.Other, name = "(header + webview + bottom) + (part sticky header + viewpager)")
 public class QDContinuousNestedScroll7Fragment extends QDContinuousNestedScrollBaseFragment {
     private static final String TAG = "ContinuousNestedScroll";
 

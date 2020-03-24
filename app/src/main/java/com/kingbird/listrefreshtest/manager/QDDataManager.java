@@ -1,13 +1,12 @@
 package com.kingbird.listrefreshtest.manager;
 
-import com.kingbird.listrefreshtest.fragment.BaseFragment;
+import com.kingbird.listrefreshtest.base.BaseFragment;
 import com.kingbird.listrefreshtest.fragment.helper.QDNotchHelperFragment;
 import com.kingbird.listrefreshtest.fragment.components.QDPullFragment;
 import com.kingbird.listrefreshtest.fragment.lab.QDAnimationListViewFragment;
 import com.kingbird.listrefreshtest.fragment.lab.QDContinuousNestedScrollFragment;
 import com.kingbird.listrefreshtest.fragment.section.QDSectionLayoutFragment;
 import com.kingbird.listrefreshtest.model.QDItemDescription;
-import com.kingbird.listrefreshtest.model.QDWidgetContainer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +17,7 @@ import java.util.List;
  */
 
 public class QDDataManager {
-    private static QDDataManager _sInstance;
+    private static QDDataManager sInstance;
     private QDWidgetContainer mWidgetContainer;
 
     private List<Class<? extends BaseFragment>> mComponentsNames;
@@ -33,10 +32,10 @@ public class QDDataManager {
     }
 
     public static QDDataManager getInstance() {
-        if (_sInstance == null) {
-            _sInstance = new QDDataManager();
+        if (sInstance == null) {
+            sInstance = new QDDataManager();
         }
-        return _sInstance;
+        return sInstance;
     }
 
 

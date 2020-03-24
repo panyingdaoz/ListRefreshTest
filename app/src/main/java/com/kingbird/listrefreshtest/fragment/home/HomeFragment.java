@@ -1,12 +1,13 @@
 package com.kingbird.listrefreshtest.fragment.home;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.kingbird.listrefreshtest.R;
-import com.kingbird.listrefreshtest.fragment.BaseFragment;
+import com.kingbird.listrefreshtest.base.BaseFragment;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.widget.tab.QMUITab;
 import com.qmuiteam.qmui.widget.tab.QMUITabBuilder;
@@ -30,7 +31,6 @@ import butterknife.ButterKnife;
  */
 
 public class HomeFragment extends BaseFragment {
-//    private final static String TAG = HomeFragment.class.getSimpleName();
 
     @BindView(R.id.pager)
     ViewPager mViewPager;
@@ -83,6 +83,8 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected View onCreateView() {
+        @SuppressLint("InflateParams")
+//        View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_home, null);
         FrameLayout layout = (FrameLayout) LayoutInflater.from(getActivity()).inflate(R.layout.fragment_home, null);
         ButterKnife.bind(this, layout);
         initTabs();
@@ -119,16 +121,9 @@ public class HomeFragment extends BaseFragment {
 
     private void initPagers() {
 
-//        HomeController.HomeControlListener listener = HomeFragment.this::startFragment;
-        HomeController.HomeControlListener listener = new HomeController.HomeControlListener() {
-            @Override
-            public void startFragment(BaseFragment fragment) {
-                KLog.e("启动对象：" + fragment);
-                HomeFragment.this.startFragment(fragment);
-            }
-        };
+        HomeController.HomeControlListener listener = HomeFragment.this::startFragment;
 
-        mPages = new HashMap<>();
+        mPages = new HashMap<>(3);
 
         HomeController homeComponentsController = new HomeComponentsController(getActivity());
         homeComponentsController.setHomeControlListener(listener);
@@ -166,10 +161,10 @@ public class HomeFragment extends BaseFragment {
         }
     }
 
-    @Override
-    protected boolean canDragBack() {
-        return false;
-    }
+//    @Override
+//    protected boolean canDragBack() {
+//        return false;
+//    }
 
     @Override
     public Object onLastFragmentFinish() {

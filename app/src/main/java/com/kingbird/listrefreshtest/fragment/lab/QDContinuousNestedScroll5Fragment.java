@@ -19,15 +19,12 @@ import com.qmuiteam.qmui.nestedScroll.QMUIContinuousNestedTopAreaBehavior;
 import com.qmuiteam.qmui.nestedScroll.QMUIContinuousNestedTopDelegateLayout;
 import com.qmuiteam.qmui.nestedScroll.QMUIContinuousNestedTopWebView;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
-import com.qmuiteam.qmuidemo.lib.Group;
-import com.qmuiteam.qmuidemo.lib.annotation.Widget;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-@Widget(group = Group.Other, name = "(header + webview + bottom) + recyclerview")
 public class QDContinuousNestedScroll5Fragment extends QDContinuousNestedScrollBaseFragment {
 
     private QMUIContinuousNestedTopDelegateLayout mTopDelegateLayout;

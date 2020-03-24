@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.kingbird.listrefreshtest.R;
+import com.kingbird.listrefreshtest.base.BaseFragment;
 import com.qmuiteam.qmui.arch.QMUIFragment;
 import com.qmuiteam.qmui.arch.SwipeBackLayout;
 import com.qmuiteam.qmui.util.QMUIPackageHelper;

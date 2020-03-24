@@ -18,6 +18,7 @@ import android.widget.ZoomButtonsController;
 
 import com.kingbird.listrefreshtest.QDWebView;
 import com.kingbird.listrefreshtest.R;
+import com.kingbird.listrefreshtest.base.BaseFragment;
 import com.qmuiteam.qmui.util.QMUILangHelper;
 import com.qmuiteam.qmui.util.QMUIResHelper;
 import com.qmuiteam.qmui.widget.QMUITopBarLayout;

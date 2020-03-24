@@ -8,10 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.kingbird.listrefreshtest.model.SectionHeader;
 import com.kingbird.listrefreshtest.model.SectionItem;
 import com.qmuiteam.qmui.widget.section.QMUIStickySectionAdapter;
-import com.qmuiteam.qmuidemo.lib.Group;
-import com.qmuiteam.qmuidemo.lib.annotation.Widget;
 
-@Widget(group = Group.Other, name = "Sticky Section for List")
 public class QDListSectionLayoutFragment extends QDBaseSectionLayoutFragment {
 
     @Override

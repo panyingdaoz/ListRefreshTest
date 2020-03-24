@@ -3,7 +3,7 @@ package com.kingbird.listrefreshtest.manager;
 import android.content.Context;
 import android.content.res.Configuration;
 
-import com.kingbird.listrefreshtest.MyApplication;
+import com.kingbird.listrefreshtest.QDApplication;
 import com.kingbird.listrefreshtest.R;
 import com.qmuiteam.qmui.skin.QMUISkinManager;
 
@@ -31,11 +31,11 @@ public class QDSkinManager {
     }
 
     public static void changeSkin(int index) {
-        QMUISkinManager.defaultInstance(MyApplication.getContext()).changeSkin(index);
-        QDPreferenceManager.getInstance(MyApplication.getContext()).setSkinIndex(index);
+        QMUISkinManager.defaultInstance(QDApplication.getContext()).changeSkin(index);
+        QDPreferenceManager.getInstance(QDApplication.getContext()).setSkinIndex(index);
     }
 
     public static int getCurrentSkin() {
-        return QMUISkinManager.defaultInstance(MyApplication.getContext()).getCurrentSkin();
+        return QMUISkinManager.defaultInstance(QDApplication.getContext()).getCurrentSkin();
     }
 }

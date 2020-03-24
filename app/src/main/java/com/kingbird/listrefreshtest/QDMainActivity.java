@@ -1,5 +1,6 @@
 package com.kingbird.listrefreshtest;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,13 +14,14 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.kingbird.listrefreshtest.base.BaseFragmentActivity;
-import com.kingbird.listrefreshtest.fragment.BaseFragment;
+import com.kingbird.listrefreshtest.base.BaseFragment;
 import com.kingbird.listrefreshtest.fragment.helper.QDNotchHelperFragment;
 import com.kingbird.listrefreshtest.fragment.components.QDPullHorizontalTestFragment;
 import com.kingbird.listrefreshtest.fragment.components.QDPullRefreshAndLoadMoreTestFragment;
@@ -46,6 +48,7 @@ import com.qmuiteam.qmui.widget.QMUIWindowInsetLayout;
 import com.qmuiteam.qmui.widget.dialog.QMUIDialog;
 import com.qmuiteam.qmui.widget.popup.QMUIPopup;
 import com.qmuiteam.qmui.widget.popup.QMUIPopups;
+import com.socks.library.KLog;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -71,18 +74,19 @@ import static com.kingbird.listrefreshtest.fragment.QDWebExplorerFragment.EXTRA_
         })
 @DefaultFirstFragment(HomeFragment.class)
 @LatestVisitRecord
-public class QDMainActivity extends BaseFragmentActivity {
+public class QDMainActivity extends QMUIFragmentActivity {
 
     private QMUIPopup mGlobalAction;
 
     private QMUISkinManager.OnSkinChangeListener mOnSkinChangeListener = new QMUISkinManager.OnSkinChangeListener() {
         @Override
         public void onSkinChange(int oldSkin, int newSkin) {
-            if (newSkin == QDSkinManager.SKIN_WHITE) {
-                QMUIStatusBarHelper.setStatusBarLightMode(QDMainActivity.this);
-            } else {
-                QMUIStatusBarHelper.setStatusBarDarkMode(QDMainActivity.this);
-            }
+            KLog.e("皮肤：" + newSkin);
+//            if (newSkin == QDSkinManager.SKIN_WHITE) {
+//                QMUIStatusBarHelper.setStatusBarLightMode(QDMainActivity.this);
+//            } else {
+//                QMUIStatusBarHelper.setStatusBarDarkMode(QDMainActivity.this);
+//            }
         }
     };
 
@@ -99,7 +103,7 @@ public class QDMainActivity extends BaseFragmentActivity {
     private void renderSkinMakerBtn() {
         Fragment baseFragment = getCurrentFragment();
         if (baseFragment instanceof BaseFragment) {
-            if (MyApplication.openSkinMake) {
+            if (QDApplication.openSkinMake) {
                 ((BaseFragment) baseFragment).openSkinMaker();
             } else {
                 QMUISkinMaker.getInstance().unBindAll();
@@ -110,25 +114,25 @@ public class QDMainActivity extends BaseFragmentActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        QMUISkinManager.defaultInstance(this).addSkinChangeListener(mOnSkinChangeListener);
+//        QMUISkinManager.defaultInstance(this).addSkinChangeListener(mOnSkinChangeListener);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        renderSkinMakerBtn();
+//        renderSkinMakerBtn();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        QMUISkinManager.defaultInstance(this).removeSkinChangeListener(mOnSkinChangeListener);
+//        QMUISkinManager.defaultInstance(this).removeSkinChangeListener(mOnSkinChangeListener);
     }
 
     private void showGlobalActionPopup(View v) {
         String[] listItems = new String[]{
                 "Change Skin",
-                MyApplication.openSkinMake ? "Close SkinMaker(Developing)" : "Open SkinMaker(Developing)",
+                QDApplication.openSkinMake ? "Close SkinMaker(Developing)" : "Open SkinMaker(Developing)",
                 "Export SkinMaker Result"
         };
         List<String> data = new ArrayList<>();
@@ -137,25 +141,31 @@ public class QDMainActivity extends BaseFragmentActivity {
 
         ArrayAdapter adapter = new ArrayAdapter<>(this, R.layout.simple_list_item, data);
         AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
+            @SuppressLint("ShowToast")
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if (i == 0) {
+                    KLog.e("点击皮肤肤色");
                     final String[] items = new String[]{"蓝色（默认）", "黑色", "白色"};
                     new QMUIDialog.MenuDialogBuilder(QDMainActivity.this)
                             .addItems(items, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    QDSkinManager.changeSkin(which + 1);
+//                                    QDSkinManager.changeSkin(which + 1);
                                     dialog.dismiss();
                                 }
                             })
                             .create()
                             .show();
                 } else if (i == 1) {
-                    MyApplication.openSkinMake = !MyApplication.openSkinMake;
-                    renderSkinMakerBtn();
+//                    KLog.e("小菜单item2");
+                    Toast.makeText(QDMainActivity.this, "小菜单item2", Toast.LENGTH_LONG);
+//                    QDApplication.openSkinMake = !QDApplication.openSkinMake;
+//                    renderSkinMakerBtn();
                 } else if (i == 2) {
-                    QMUISkinMaker.getInstance().export(QDMainActivity.this);
+//                    KLog.e("小菜单item3");
+                    Toast.makeText(QDMainActivity.this, "小菜单item3", Toast.LENGTH_LONG);
+//                    QMUISkinMaker.getInstance().export(QDMainActivity.this);
                 }
                 if (mGlobalAction != null) {
                     mGlobalAction.dismiss();

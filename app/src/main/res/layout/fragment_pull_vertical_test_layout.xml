@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.qmuiteam.qmui.widget.QMUIWindowInsetLayout2 xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -40,7 +41,8 @@
             app:qmui_target_view_trigger_offset="wrap"
             app:qmui_pull_rate="0.45"
             app:qmui_can_over_pull="true"
-            app:qmui_need_receive_fling_from_target_view="false"/>
+            app:qmui_need_receive_fling_from_target_view="false"
+            tools:ignore="MissingPrefix" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -53,6 +55,7 @@
             app:qmui_target_view_trigger_offset="wrap"
             app:qmui_pull_rate="0.45"
             app:qmui_can_over_pull="false"
-            app:qmui_need_receive_fling_from_target_view="true"/>
+            app:qmui_need_receive_fling_from_target_view="true"
+            tools:ignore="MissingPrefix" />
     </com.qmuiteam.qmui.widget.pullLayout.QMUIPullLayout>
 </com.qmuiteam.qmui.widget.QMUIWindowInsetLayout2>

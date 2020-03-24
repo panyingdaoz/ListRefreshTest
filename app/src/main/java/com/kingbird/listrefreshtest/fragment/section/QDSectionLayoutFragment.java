@@ -4,20 +4,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.kingbird.listrefreshtest.R;
-import com.kingbird.listrefreshtest.fragment.BaseFragment;
+import com.kingbird.listrefreshtest.base.BaseFragment;
 import com.kingbird.listrefreshtest.manager.QDDataManager;
 import com.kingbird.listrefreshtest.model.QDItemDescription;
 import com.qmuiteam.qmui.widget.QMUITopBarLayout;
 import com.qmuiteam.qmui.widget.grouplist.QMUIGroupListView;
-import com.qmuiteam.qmui.widget.section.QMUIStickySectionLayout;
-import com.qmuiteam.qmuidemo.lib.annotation.Widget;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-@Widget(widgetClass = QMUIStickySectionLayout.class,
-//        iconRes = R.mipmap.icon_grid_sticky_section,
-        docUrl = "https://github.com/Tencent/QMUI_Android/wiki/QMUIStickySectionLayout")
 public class QDSectionLayoutFragment extends BaseFragment {
     @BindView(R.id.topbar)
     QMUITopBarLayout mTopBar;
