@@ -56,8 +56,7 @@ public class LauncherActivity extends AppCompatActivity {
     private void doAfterPermissionsGranted() {
         Intent intent = QMUILatestVisit.intentOfLatestVisit(this);
         if (intent == null) {
-            KLog.e("启动 MainActivity");
-//            intent = new Intent(this, MainActivity.class);
+            KLog.e("启动 QDMainActivity");
             intent = new Intent(this, QDMainActivity.class);
         }
         startActivity(intent);

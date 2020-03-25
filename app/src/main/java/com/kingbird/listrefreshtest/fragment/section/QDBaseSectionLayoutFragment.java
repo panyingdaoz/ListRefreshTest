@@ -133,7 +133,7 @@ public abstract class QDBaseSectionLayoutFragment extends BaseFragment {
         mSectionLayout.setAdapter(mAdapter, true);
         ArrayList<QMUISection<SectionHeader, SectionItem>> list = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            list.add(createSection("header " + i, i%2 != 0));
+            list.add(createSection("header " + i, i % 2 != 0));
         }
         mAdapter.setData(list);
     }
@@ -215,6 +215,7 @@ public abstract class QDBaseSectionLayoutFragment extends BaseFragment {
                                     mLayoutManager.scrollToPosition(targetPosition);
                                 }
                             }
+                            default:
                         }
                         dialog.dismiss();
                     }

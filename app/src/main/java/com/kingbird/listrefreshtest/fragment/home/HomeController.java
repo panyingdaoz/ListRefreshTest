@@ -31,6 +31,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.kingbird.listrefreshtest.utils.Const.ANIMATION_LISTVIEW;
+import static com.kingbird.listrefreshtest.utils.Const.CONTINUOUS_NESTEDSCROLL;
 import static com.kingbird.listrefreshtest.utils.Const.NOTCH_HELPER;
 import static com.kingbird.listrefreshtest.utils.Const.PULL_FRAGMENT;
 import static com.kingbird.listrefreshtest.utils.Const.SECTION_LAYOUT;
@@ -74,9 +75,6 @@ public abstract class HomeController extends QMUIWindowInsetLayout {
     private void initTopBar() {
         KLog.e("topBar标题：" + getTitle());
         mTopBar.setTitle(getTitle());
-//        mTopBar.setTitle(getTitle()).setTextColor(R.color.colorWhite);
-//        mTopBar.setTitle("列表刷新").setTextColor(ContextCompat.getColor(this, R.color.qmui_config_color_white));
-//        mTopBar.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorPrimaryDark));
         mTopBar.addRightImageButton(R.mipmap.icon_topbar_about, R.id.topbar_right_about_button).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,7 +95,6 @@ public abstract class HomeController extends QMUIWindowInsetLayout {
                     BaseFragment fragment = item.getDemoClass().newInstance();
                     if (fragment instanceof QDNotchHelperFragment) {
                         Context context = getContext();
-//                        Intent intent = MainActivity.of(context, QDNotchHelperFragment.class);
                         Intent intent = QDMainActivity.of(context, QDNotchHelperFragment.class);
                         context.startActivity(intent);
                         if (context instanceof Activity) {
@@ -174,8 +171,10 @@ public abstract class HomeController extends QMUIWindowInsetLayout {
                         case PULL_FRAGMENT:
                             iconRes = R.mipmap.icon_grid_pull_layout;
                             break;
+                        case CONTINUOUS_NESTEDSCROLL:
+                            iconRes = R.mipmap.icon_grid_continuous_nest_scroll;
+                            break;
                         default:
-//                            iconRes = R.mipmap.icon_grid_status_bar_helper;
                             iconRes = item.getIconRes();
                             break;
                     }

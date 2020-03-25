@@ -84,7 +84,6 @@ public class HomeFragment extends BaseFragment {
     @Override
     protected View onCreateView() {
         @SuppressLint("InflateParams")
-//        View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_home, null);
         FrameLayout layout = (FrameLayout) LayoutInflater.from(getActivity()).inflate(R.layout.fragment_home, null);
         ButterKnife.bind(this, layout);
         initTabs();
@@ -161,10 +160,10 @@ public class HomeFragment extends BaseFragment {
         }
     }
 
-//    @Override
-//    protected boolean canDragBack() {
-//        return false;
-//    }
+    @Override
+    protected boolean canDragBack() {
+        return false;
+    }
 
     @Override
     public Object onLastFragmentFinish() {

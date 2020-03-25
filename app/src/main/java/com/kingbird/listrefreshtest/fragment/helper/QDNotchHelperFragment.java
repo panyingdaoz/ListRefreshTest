@@ -15,8 +15,6 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 
 import com.kingbird.listrefreshtest.R;
-import com.kingbird.listrefreshtest.annotation.Group;
-import com.kingbird.listrefreshtest.annotation.Widget;
 import com.kingbird.listrefreshtest.base.BaseFragment;
 import com.kingbird.listrefreshtest.manager.QDDataManager;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;

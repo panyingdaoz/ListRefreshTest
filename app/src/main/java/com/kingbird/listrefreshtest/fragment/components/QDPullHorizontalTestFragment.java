@@ -36,7 +36,6 @@ public class QDPullHorizontalTestFragment extends BaseFragment {
         View root = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_pull_horizontal_test_layout, null);
         ButterKnife.bind(this, root);
 
-//        QDDataManager QDDataManager = com.qmuiteam.qmuidemo.manager.QDDataManager.getInstance();
         mQDItemDescription = QDDataManager.getInstance().getDescription(this.getClass());
         initTopBar();
         initData();

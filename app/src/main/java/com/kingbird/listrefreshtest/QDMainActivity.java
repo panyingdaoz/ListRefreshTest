@@ -18,10 +18,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
-import com.kingbird.listrefreshtest.base.BaseFragmentActivity;
-import com.kingbird.listrefreshtest.base.BaseFragment;
 import com.kingbird.listrefreshtest.fragment.helper.QDNotchHelperFragment;
 import com.kingbird.listrefreshtest.fragment.components.QDPullHorizontalTestFragment;
 import com.kingbird.listrefreshtest.fragment.components.QDPullRefreshAndLoadMoreTestFragment;
@@ -29,19 +26,15 @@ import com.kingbird.listrefreshtest.fragment.components.QDPullVerticalTestFragme
 import com.kingbird.listrefreshtest.fragment.QDWebExplorerFragment;
 import com.kingbird.listrefreshtest.fragment.home.HomeFragment;
 import com.kingbird.listrefreshtest.fragment.lab.QDContinuousNestedScroll1Fragment;
-import com.kingbird.listrefreshtest.manager.QDSkinManager;
 import com.qmuiteam.qmui.arch.QMUIFragment;
 import com.qmuiteam.qmui.arch.QMUIFragmentActivity;
 import com.qmuiteam.qmui.arch.annotation.DefaultFirstFragment;
 import com.qmuiteam.qmui.arch.annotation.FirstFragments;
 import com.qmuiteam.qmui.arch.annotation.LatestVisitRecord;
 import com.qmuiteam.qmui.skin.QMUISkinHelper;
-import com.qmuiteam.qmui.skin.QMUISkinMaker;
-import com.qmuiteam.qmui.skin.QMUISkinManager;
 import com.qmuiteam.qmui.skin.QMUISkinValueBuilder;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.util.QMUIResHelper;
-import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 import com.qmuiteam.qmui.util.QMUIViewOffsetHelper;
 import com.qmuiteam.qmui.widget.QMUIRadiusImageView2;
 import com.qmuiteam.qmui.widget.QMUIWindowInsetLayout;
@@ -60,35 +53,18 @@ import static com.kingbird.listrefreshtest.fragment.QDWebExplorerFragment.EXTRA_
 @FirstFragments(
         value = {
                 HomeFragment.class,
-//                QDArchTestFragment.class,
-//                QDArchSurfaceTestFragment.class,
                 QDNotchHelperFragment.class,
                 QDWebExplorerFragment.class,
                 QDContinuousNestedScroll1Fragment.class,
-//                QDTabSegmentFixModeFragment.class,
                 QDPullVerticalTestFragment.class,
                 QDPullHorizontalTestFragment.class,
                 QDPullRefreshAndLoadMoreTestFragment.class
-//                QDRVSwipeMutiActionFragment.class,
-//                QDPopupFragment.class
         })
 @DefaultFirstFragment(HomeFragment.class)
 @LatestVisitRecord
 public class QDMainActivity extends QMUIFragmentActivity {
 
     private QMUIPopup mGlobalAction;
-
-    private QMUISkinManager.OnSkinChangeListener mOnSkinChangeListener = new QMUISkinManager.OnSkinChangeListener() {
-        @Override
-        public void onSkinChange(int oldSkin, int newSkin) {
-            KLog.e("皮肤：" + newSkin);
-//            if (newSkin == QDSkinManager.SKIN_WHITE) {
-//                QMUIStatusBarHelper.setStatusBarLightMode(QDMainActivity.this);
-//            } else {
-//                QMUIStatusBarHelper.setStatusBarDarkMode(QDMainActivity.this);
-//            }
-        }
-    };
 
     @Override
     protected QMUIFragmentActivity.RootView onCreateRootView(int fragmentContainerId) {
@@ -100,33 +76,19 @@ public class QDMainActivity extends QMUIFragmentActivity {
         super.onConfigurationChanged(newConfig);
     }
 
-    private void renderSkinMakerBtn() {
-        Fragment baseFragment = getCurrentFragment();
-        if (baseFragment instanceof BaseFragment) {
-            if (QDApplication.openSkinMake) {
-                ((BaseFragment) baseFragment).openSkinMaker();
-            } else {
-                QMUISkinMaker.getInstance().unBindAll();
-            }
-        }
-    }
-
     @Override
     protected void onStart() {
         super.onStart();
-//        QMUISkinManager.defaultInstance(this).addSkinChangeListener(mOnSkinChangeListener);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-//        renderSkinMakerBtn();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-//        QMUISkinManager.defaultInstance(this).removeSkinChangeListener(mOnSkinChangeListener);
     }
 
     private void showGlobalActionPopup(View v) {
@@ -151,21 +113,17 @@ public class QDMainActivity extends QMUIFragmentActivity {
                             .addItems(items, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-//                                    QDSkinManager.changeSkin(which + 1);
                                     dialog.dismiss();
                                 }
                             })
                             .create()
                             .show();
                 } else if (i == 1) {
-//                    KLog.e("小菜单item2");
+                    KLog.e("小菜单item2");
                     Toast.makeText(QDMainActivity.this, "小菜单item2", Toast.LENGTH_LONG);
-//                    QDApplication.openSkinMake = !QDApplication.openSkinMake;
-//                    renderSkinMakerBtn();
                 } else if (i == 2) {
-//                    KLog.e("小菜单item3");
+                    KLog.e("小菜单item3");
                     Toast.makeText(QDMainActivity.this, "小菜单item3", Toast.LENGTH_LONG);
-//                    QMUISkinMaker.getInstance().export(QDMainActivity.this);
                 }
                 if (mGlobalAction != null) {
                     mGlobalAction.dismiss();

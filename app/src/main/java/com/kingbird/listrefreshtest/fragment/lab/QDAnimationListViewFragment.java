@@ -7,8 +7,6 @@ import android.widget.Toast;
 
 import com.kingbird.listrefreshtest.R;
 import com.kingbird.listrefreshtest.adaptor.QDSimpleAdapter;
-import com.kingbird.listrefreshtest.annotation.Group;
-import com.kingbird.listrefreshtest.annotation.Widget;
 import com.kingbird.listrefreshtest.base.BaseFragment;
 import com.kingbird.listrefreshtest.manager.QDDataManager;
 import com.qmuiteam.qmui.util.QMUIViewHelper;

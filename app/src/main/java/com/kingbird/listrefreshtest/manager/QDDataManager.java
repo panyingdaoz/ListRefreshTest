@@ -44,33 +44,9 @@ public class QDDataManager {
      */
     private void initComponentsDesc() {
         mComponentsNames = new ArrayList<>();
-//        mComponentsNames.add(QDButtonFragment.class);
-//        mComponentsNames.add(QDDialogFragment.class);
-//        mComponentsNames.add(QDFloatLayoutFragment.class);
-//        mComponentsNames.add(QDEmptyViewFragment.class);
-//        mComponentsNames.add(QDTabSegmentFragment.class);
-//        mComponentsNames.add(QDProgressBarFragment.class);
-//        mComponentsNames.add(QDBottomSheetFragment.class);
-//        mComponentsNames.add(QDGroupListViewFragment.class);
-//        mComponentsNames.add(QDTipDialogFragment.class);
-//        mComponentsNames.add(QDRadiusImageViewFragment.class);
-//        mComponentsNames.add(QDVerticalTextViewFragment.class);
-//        mComponentsNames.add(QDPullRefreshFragment.class);
-//        mComponentsNames.add(QDPopupFragment.class);
-//        mComponentsNames.add(QDSpanTouchFixTextViewFragment.class);
-//        mComponentsNames.add(QDLinkTextViewFragment.class);
-//        mComponentsNames.add(QDQQFaceFragment.class);
-//        mComponentsNames.add(QDSpanFragment.class);
-//        mComponentsNames.add(QDCollapsingTopBarLayoutFragment.class);
-//        mComponentsNames.add(QDViewPagerFragment.class);
-//        mComponentsNames.add(QDLayoutFragment.class);
-//        mComponentsNames.add(QDPriorityLinearLayoutFragment.class);
         mComponentsNames.add(QDSectionLayoutFragment.class);
         mComponentsNames.add(QDContinuousNestedScrollFragment.class);
         mComponentsNames.add(QDPullFragment.class);
-//        mComponentsNames.add(QDSliderFragment.class);
-//        mComponentsNames.add(QDRecyclerViewDraggableScrollBarFragment.class);
-//        mComponentsNames.add(QDRVSwipeActionFragment.class);
     }
 
     /**
@@ -78,11 +54,6 @@ public class QDDataManager {
      */
     private void initUtilDesc() {
         mUtilNames = new ArrayList<>();
-//        mUtilNames.add(QDColorHelperFragment.class);
-//        mUtilNames.add(QDDeviceHelperFragment.class);
-//        mUtilNames.add(QDDrawableHelperFragment.class);
-//        mUtilNames.add(QDStatusBarHelperFragment.class);
-//        mUtilNames.add(QDViewHelperFragment.class);
         mUtilNames.add(QDNotchHelperFragment.class);
     }
 
@@ -92,9 +63,6 @@ public class QDDataManager {
     private void initLabDesc() {
         mLabNames = new ArrayList<>();
         mLabNames.add(QDAnimationListViewFragment.class);
-//        mLabNames.add(QDSnapHelperFragment.class);
-//        mLabNames.add(QDArchTestFragment.class);
-//        mLabNames.add(QDWebViewFragment.class);
     }
 
     public QDItemDescription getDescription(Class<? extends BaseFragment> cls) {

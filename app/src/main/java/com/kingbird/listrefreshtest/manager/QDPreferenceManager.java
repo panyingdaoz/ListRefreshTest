@@ -42,7 +42,8 @@ public class QDPreferenceManager {
         editor.apply();
     }
 
-    public int getSkinIndex() {
-        return sPreferences.getInt(APP_SKIN_INDEX, QDSkinManager.SKIN_BLUE);
-    }
+    // 去掉皮肤管理
+//    public int getSkinIndex() {
+//        return sPreferences.getInt(APP_SKIN_INDEX, QDSkinManager.SKIN_BLUE);
+//    }
 }

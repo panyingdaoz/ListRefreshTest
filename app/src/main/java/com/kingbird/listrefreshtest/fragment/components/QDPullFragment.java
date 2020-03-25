@@ -26,7 +26,6 @@ public class QDPullFragment extends BaseFragment {
 
     @Override
     protected View onCreateView() {
-        KLog.e("调用对象："+getActivity());
         qdDataManager = QDDataManager.getInstance();
         @SuppressLint("InflateParams")
         View root = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_grouplistview, null);

@@ -15,7 +15,7 @@ public interface Const {
     String ANIMATION_LISTVIEW = "QDAnimationListViewFragment";
     String SECTION_LAYOUT = "QDSectionLayoutFragment";
     String PULL_FRAGMENT = "QDPullFragment";
-//    String APP_NAME = "Advertisting";
+    String CONTINUOUS_NESTEDSCROLL = "QDContinuousNestedScrollFragment";
 //    String APP_NAME = "Advertisting";
 //    String APP_NAME = "Advertisting";
 

@@ -1,2 +1,2 @@
-include ':app', ':skin-maker'
+include ':app'
 rootProject.name='ListRefreshTest'

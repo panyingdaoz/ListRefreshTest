@@ -20,9 +20,7 @@ public class QDItemDescription {
 
     public QDItemDescription(Class<? extends BaseFragment> kitDemoClass, String kitName, int iconRes, String docUrl) {
         mKitDemoClass = kitDemoClass;
-//        KLog.e("kitName：" + kitName);
         mKitName = kitName;
-//        KLog.e("传入iconRes：" + iconRes);
         mIconRes = iconRes;
         mDocUrl = docUrl;
     }

@@ -43,7 +43,6 @@ public class QDPullVerticalTestFragment extends BaseFragment {
         View root = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_pull_vertical_test_layout, null);
         ButterKnife.bind(this, root);
 
-//        QDDataManager QDDataManager = QDDataManager.getInstance();
         mQDItemDescription = QDDataManager.getInstance().getDescription(this.getClass());
         initTopBar();
         initData();

@@ -38,7 +38,7 @@ public abstract class QDContinuousNestedScrollBaseFragment extends BaseFragment 
         return view;
     }
 
-    private void initPullRefreshLayout(){
+    private void initPullRefreshLayout() {
         mPullRefreshLayout.setOnPullListener(new QMUIPullRefreshLayout.OnPullListener() {
             @Override
             public void onMoveTarget(int offset) {
@@ -123,6 +123,7 @@ public abstract class QDContinuousNestedScrollBaseFragment extends BaseFragment 
                                 break;
                             case 8:
                                 mCoordinatorLayout.restoreScrollInfo(mSavedScrollInfo);
+                            default:
                         }
                         dialog.dismiss();
                     }

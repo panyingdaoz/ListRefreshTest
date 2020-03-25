@@ -43,8 +43,6 @@ dependencies {
     implementation "com.qmuiteam:arch:$qmui_arch_version"
     // use annotationProcessor if java
     annotationProcessor "com.qmuiteam:arch-compiler:$qmui_arch_version"
-    implementation project(":skin-maker")
-//    implementation project(":lib")
 
     //leak
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
